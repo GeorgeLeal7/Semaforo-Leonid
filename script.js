@@ -1,5 +1,8 @@
 const semaforo = document.getElementById("semaforo")
 let idInterval
+let intervalVerde
+let intervalVermelho
+let intervalAmarelo
 
 function semaforoVerde() {
     return semaforo.src.includes("verde")
@@ -18,15 +21,42 @@ function semaforoDesligado() {
 }
 
 function verde() {
-    semaforo.src = "img/verde.png"
+    
+    const cor = document.getElementById("verde")
+    if (cor.textContent == "Verde") {
+        semaforo.src = "img/verde.png"
+        intervalVerde = setInterval(semaforoVerde, 0)
+        cor.textContent = "Parar"
+    } else {
+        pararVerde()
+        cor.textContent = "Verde"
+    }
 }
 
 function amarelo() {
-    semaforo.src = "img/amarelo.png"
+
+    const cor = document.getElementById("amarelo")
+    if (cor.textContent == "Amarelo") {
+        semaforo.src = "img/amarelo.png"
+        intervalAmarelo = setInterval(semaforoAmarelo, 0)
+        cor.textContent = "Parar"
+    } else {
+        pararAmarelo()
+        cor.textContent = "Amarelo"
+    }
 }
 
 function vermelho() {
-    semaforo.src = "img/vermelho.png"
+
+    const cor = document.getElementById("vermelho")
+    if (cor.textContent == "Vermelho") {
+        semaforo.src = "img/vermelho.png"
+        intervalVermelho = setInterval(semaforoVermelho, 0)
+        cor.textContent = "Parar"
+    } else {
+        pararAmarelo()
+        cor.textContent = "Vermelho"
+    }
 }
 
 function trocarImagem() {
@@ -40,6 +70,21 @@ function trocarImagem() {
     } else {
         vermelho()
     }
+}
+
+function pararAmarelo() {
+    clearInterval(intervalAmarelo)
+    semaforo.src = "img/desligado.png"
+}
+
+function pararVermelho() {
+    clearInterval(intervalVermelho)
+    semaforo.src = "img/desligado.png"
+}
+
+function pararVerde() {
+    clearInterval(intervalVerde)
+    semaforo.src = "img/desligado.png"
 }
 
 function pararAutomatico() {
