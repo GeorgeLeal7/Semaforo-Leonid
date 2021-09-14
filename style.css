@@ -27,7 +27,49 @@ main{
 }
 
 #botoes{
-    margin-left: 30px;
+    width: 320px;
+    /* background-color: aqua; */
+}
+
+#vermelho{
+    width: 70px;
+    height: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    border-radius: 10px;
+
+    background-color: #ff473d;
+    color: white;
+}
+#amarelo{
+    width: 70px;
+    height: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    border-radius: 10px;
+
+    background-color: #fff645;
+    color: black;
+}
+#verde{
+    width: 70px;
+    height: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    border-radius: 10px;
+
+    background-color: #7dff69;
+    color: black;
+}
+#automatico{
+    width: 80px;
+    height: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    border-radius: 10px;
+
+    /* background-color: #7dff69; */
+    color: black;
 }
 
 footer{
